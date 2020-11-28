@@ -1,0 +1,6 @@
+probabilistic_inference.main.save_fpath='results/posterior_samples/dnns/dmv/unperturbed.pkl'
+probabilistic_inference.main.observed_pred_fpath='data/observed_predictions/perturbation_study/dnns/dmv/unperturbed.pkl'
+probabilistic_inference.main.exam_info_fpath='data/exam_info.csv'
+probabilistic_inference.main.priors=[0, 0, 0, 0, 1, 1, 1, 1]
+probabilistic_inference.main.seed=0
+probabilistic_inference.main.n_posterior_samples=1000

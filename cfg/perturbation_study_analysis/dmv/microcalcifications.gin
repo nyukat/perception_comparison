@@ -1,0 +1,7 @@
+perturbation_study_analysis.main.save_fpath='results/perturbation_study_analysis/dmv/microcalcifications.pdf'
+perturbation_study_analysis.main.posterior_samples_dpath='results/posterior_samples'
+perturbation_study_analysis.main.posterior_pred_dpath='results/posterior_predictions'
+perturbation_study_analysis.main.exam_info_fpath='data/exam_info.csv'
+perturbation_study_analysis.main.dnn_architecture='dmv'
+perturbation_study_analysis.main.subgroup='microcalcifications'
+perturbation_study_analysis.main.is_legend=True
