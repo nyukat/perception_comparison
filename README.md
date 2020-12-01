@@ -1,5 +1,5 @@
 # Differences between human and machine perception in medical diagnosis
-This repository accompanies our paper [Differences between human and machine perception in medical diagnosis](https://arxiv.org/abs/????.?????). In the paper, 
+This repository accompanies our paper [Differences between human and machine perception in medical diagnosis](https://arxiv.org/abs/2011.14036). In the paper, 
 we propose a framework for comparing human and machine perception in medical diagnosis, and demonstrate it with a case 
 study in breast cancer screening. This repository contains the data and code necessary to reproduce the results from our 
 case study. There are three components:
@@ -99,6 +99,6 @@ Taro Makino, Stanisław Jastrzębski, Witold Oleszkiewicz, Celin Chacko, Robin E
     @article{Makino2020Differences, 
         title = {Differences between human and machine perception in medical diagnosis},
         author = {Taro Makino and Stanisław Jastrzębski and Witold Oleszkiewicz and Celin Chacko and Robin Ehrenpreis and Naziya Samreen and Chloe Chhor and Eric Kim and Jiyon Lee and Kristine Pysarenko and Beatriu Reig and Hildegard Toth and Divya Awal and Linda Du and Alice Kim and James Park and Daniel K. Sodickson and Laura Heacock and Linda Moy and Kyunghyun Cho and Krzysztof J. Geras}, 
-        journal = {arXiv:????.?????},
+        journal = {arXiv:2011.14036},
         year = {2020}
     }
