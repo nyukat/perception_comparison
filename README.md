@@ -21,7 +21,7 @@ Additionally, we include our implementation of Gaussian low-pass filtering in `f
 
 ### Setup
 
-Add this directory to `PYTHONPATH`, and install the following:
+Add the directory path of this repository to `PYTHONPATH`, and install the following:
 * Python 3.*
 * Gin-config
 * Imageio
@@ -36,6 +36,10 @@ instructions in <https://pystan.readthedocs.io/en/latest/installation_beginner.h
 resolved with:
 * Linux: `conda install gcc_linux-64 gxx_linux-64 -c anaconda`
 * Mac: `conda install clang_osx-64 clangxx_osx-64 -c anaconda`
+
+We recommend using anaconda to install everything except Gin-config and PyStan, which can be installed with pip. The 
+expected install time on a standard desktop computer is approximately five minutes. This code has been tested on Ubuntu 
+16.04 and macOS Mojave 10.14.6.
 
 ### Data
 The radiologist and DNN predictions from our two reader studies are stored as NumPy arrays, and are located in 
@@ -65,20 +69,24 @@ Here are the steps for reproducing our results on comparing radiologists and DNN
 instances of `gmic` with `dmv`. The results of the analyses are saved in the `results` directory by default, but this 
 behavior can be modified in the configuration files in `cfg`.
 
-The first step is to perform probabilistic inference and generate posterior samples:
+The first step is to perform probabilistic inference and generate posterior samples. The outputs are NumPy arrays, which 
+will be used in the subsequent analysis.
 1. Radiologists: `python code/probabilistic_inference.py cfg/probabilistic_inference/radiologists.gin`
 2. DNNs: `python code/probabilistic_inference.py cfg/probabilistic_inference/dnns/gmic/unperturbed.gin`
 3. DNNs (trained w/ filtered data): `python code/probabilistic_inference.py cfg/probabilistic_inference/dnns/gmic/filtered.gin`
 
 Next, we compare how low-pass filtering affects the predictive confidence and class separability of radiologists 
-and DNNs, performing separate analyses for two subgroups:
+and DNNs, performing separate analyses for two subgroups. The outputs are pdf images which correspond to Figure 4 in the paper.
 1. Microcalcifications: `python code/perturbation_study_analysis.py cfg/perturbation_study_analysis/gmic/microcalcifications.gin`
 2. Soft tissue lesions: `python code/perturbation_study_analysis.py cfg/perturbation_study_analysis/gmic/soft_tissue_lesions.gin` 
 
 Finally, we compare radiologists and DNNs with respect to the regions of an image deemed most suspicious. We 
-perform separate analyses for two subgroups, but this time in a single call.
+perform separate analyses for two subgroups, but this time in a single call. The output is a pdf image corresponding to 
+Figure 5 in the paper.
 
 `python annotation_study_analysis.py cfg/annotation_study_analysis/gmic.gin`
+
+The combined expected run time on a standard desktop computer is approximately 20 minutes per model architecture.
 
 **Gaussian low-pass filtering**
 
