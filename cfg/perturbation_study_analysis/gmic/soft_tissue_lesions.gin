@@ -1,4 +1,4 @@
-perturbation_study_analysis.main.save_fpath='results/perturbation_study_analysis/gmic/soft_tissue_lesions.pdf'
+perturbation_study_analysis.main.save_fpath='results/perturbation_study_analysis/gmic/soft_tissue_lesions.svg'
 perturbation_study_analysis.main.posterior_samples_dpath='results/posterior_samples'
 perturbation_study_analysis.main.posterior_pred_dpath='results/posterior_predictions'
 perturbation_study_analysis.main.exam_info_fpath='data/exam_info.csv'

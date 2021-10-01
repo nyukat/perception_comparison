@@ -1,4 +1,4 @@
-annotation_study_analysis.main.save_fpath='results/annotation_study_analysis/gmic.pdf'
+annotation_study_analysis.main.save_fpath='results/annotation_study_analysis/gmic.svg'
 annotation_study_analysis.main.observed_pred_dpath='data/observed_predictions'
 annotation_study_analysis.main.exam_info_fpath='data/exam_info.csv'
 annotation_study_analysis.main.annotation_study_idxs_fpath='data/annotation_study_idxs.pkl'

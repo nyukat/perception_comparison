@@ -1,4 +1,4 @@
-from code.utils import *
+from utils import *
 
 def plot_class_separability(ax, pred, exam_info, query, name):
     exam_idxs_l, exam_idxs_r = get_exam_idxs(exam_info, query)

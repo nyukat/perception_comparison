@@ -1,4 +1,4 @@
-from code.utils import *
+from utils import *
 
 PGM_RADIOLOGISTS = '''
 data {

@@ -47,15 +47,10 @@ def get_exam_idxs(exam_info, query):
     subgroup = query.replace(' subtask', '')
     idxs_l, idxs_r = [], []
     for exam_idx in range(len(exam_info)):
-        if subgroup in exam_info.subgroup_l.iloc[exam_idx]:
+        if subgroup in exam_info.subgroup_l.iloc[exam_idx] or (is_subtask and exam_info.y_l.iloc[exam_idx] != 'malignant'):
             idxs_l.append(exam_idx)
-        if subgroup in exam_info.subgroup_r.iloc[exam_idx]:
+        if subgroup in exam_info.subgroup_r.iloc[exam_idx] or (is_subtask and exam_info.y_r.iloc[exam_idx] != 'malignant'):
             idxs_r.append(exam_idx)
-        if is_subtask:
-            if exam_info.y_l.iloc[exam_idx] != 'malignant':
-                idxs_l.append(exam_idx)
-            if exam_info.y_r.iloc[exam_idx] != 'malignant':
-                idxs_r.append(exam_idx)
     return idxs_l, idxs_r
 
 def get_y(exam_info, exam_idxs_l, exam_idxs_r):

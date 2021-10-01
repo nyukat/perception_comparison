@@ -1,4 +1,4 @@
-from code.utils import *
+from utils import *
 
 def plot_predictive_confidence(pgm_dpath, dnn_architecture, subgroup, ax, name):
     if name == 'Radiologists':
@@ -11,8 +11,10 @@ def plot_predictive_confidence(pgm_dpath, dnn_architecture, subgroup, ax, name):
         pgm_fpath = os.path.join(pgm_dpath, 'dnns', dnn_architecture, 'filtered.pkl')
         x_offset = 0.2
     mu, gamma_, gamma, nu, b = load_file(pgm_fpath)
-    category_idx = SUBGROUPS.index(subgroup)
-    gamma = gamma[:, category_idx, :].squeeze()
+    # category_idx = SUBGROUPS.index(subgroup)
+    # gamma = gamma[:, category_idx, :].squeeze()
+    gamma = gamma[:, :2, :]
+    gamma = gamma.reshape(gamma.shape[0], -1)
     mean = gamma.mean(1)
     sd = gamma.std(1)
     p_values = []
@@ -99,8 +101,8 @@ def main(save_fpath,
         ax.set_xticklabels(SEVERITIES)
         ax.grid(True)
 
-    axes[0].set_ylabel(r'$E[\gamma_{s, c} | \mathcal{D}]$')
-    axes[1].set_ylabel('KS statistic')
+    axes[0].set_ylabel(r'Predictive confidence ($E[\gamma_{s, c} | \mathcal{D}]$)')
+    axes[1].set_ylabel('Class separability (KS statistic)')
 
     if is_legend:
         handles, labels = axes[0].get_legend_handles_labels()
